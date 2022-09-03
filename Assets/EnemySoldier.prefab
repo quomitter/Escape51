@@ -206,3 +206,4 @@ MonoBehaviour:
   bulletSpeed: 10
   fireRate: 1
   lastShot: 0
+  playerTarget: {fileID: 0}

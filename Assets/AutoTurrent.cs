@@ -13,6 +13,8 @@ public class AutoTurrent : MonoBehaviour
     public float fireRate = 0.2f;
     public float lastShot = 0f;
 
+    public Transform playerTarget; 
+
     private PlayerHealthController playerHealthController;
 
     void Start()
@@ -23,6 +25,7 @@ public class AutoTurrent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Vector2.Distance( playerTarget.transform.position, this.transform.position) < 10){
         if (Time.time > fireRate + lastShot)
         {
             GameObject clone = Instantiate(bullet, firePoint.position, firePoint.rotation);
@@ -34,7 +37,7 @@ public class AutoTurrent : MonoBehaviour
                 shot.AddForce(transform.right * bulletSpeed, ForceMode2D.Impulse);
             Destroy(clone.gameObject, 1f);
             lastShot = Time.time;
-        }
+        }}
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

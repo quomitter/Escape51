@@ -6,7 +6,7 @@ public class Enemy1 : MonoBehaviour
 {
     [SerializeField] GameObject enemyBullet;
     [SerializeField] Transform firePoint;
-    [SerializeField] Vector2 playerTarget;
+    [SerializeField] Transform playerTarget;
     [SerializeField] float fireRateCoolDown;
     
 
@@ -20,7 +20,7 @@ public class Enemy1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Vector2.Distance( playerTarget.transform.position, this.transform.position) < 10){
         if (fireRateCoolDown > 0)
         {
             fireRateCoolDown -= Time.deltaTime;
@@ -30,6 +30,6 @@ public class Enemy1 : MonoBehaviour
                 fireRateCoolDown = 2f; 
 
             }
-        }
+        }}
     }
 }
