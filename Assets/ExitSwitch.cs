@@ -6,15 +6,15 @@ using UnityEngine.Events;
 public class ExitSwitch : MonoBehaviour
 {
 
-    public UnityEvent doorswitch;
+    public UnityEvent doorswitch1;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(doorswitch == null){
-            doorswitch = new UnityEvent(); 
+        if(doorswitch1 == null){
+            doorswitch1 = new UnityEvent(); 
         }
-        doorswitch.AddListener(DoorSwitch);
+        doorswitch1.AddListener(DoorSwitch1);
     }
 
     // Update is called once per frame
@@ -23,18 +23,18 @@ public class ExitSwitch : MonoBehaviour
         
     }
 
-    void DoorSwitch(){
+    void DoorSwitch1(){
         Debug.Log("you have escaped");
     }
 
-    void OnTriggerEnter2D(Collider2D other){
+    void OnTriggerStay2D(Collider2D other){
         if(other.gameObject.tag == "Player" && Input.GetButtonDown("Fire1"))
         {
-            doorswitch.Invoke();
+            doorswitch1.Invoke();
         }
     }    
 
     public void OpenDoor(){
-            doorswitch.Invoke();
+            doorswitch1.Invoke();
     } 
 }
