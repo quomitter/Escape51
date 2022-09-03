@@ -28,28 +28,28 @@ public class RoomMaster : MonoBehaviour
     public EnterSceneRoom22 room22;
     public EnterSceneRoom23 room23;
     public EnterSceneRoom24 room24;
-    public EnterSceneRoom25 room25;
-    public EnterSceneRoom26 room26;
-    public EnterSceneRoom27 room27;
-    public EnterSceneRoom28 room28;
-    public EnterSceneRoom29 room29;
-    public EnterSceneRoom30 room30;
-    public EnterSceneRoom31 room31;
-    public EnterSceneRoom32 room32;
-    public EnterSceneRoom33 room33;
-    public EnterSceneRoom34 room34;
-    public EnterSceneRoom35 room35;
-    public EnterSceneRoom36 room36;
-    public EnterSceneRoom37 room37;
-    public EnterSceneRoom38 room38;
-    public EnterSceneRoom39 room39;
-    public EnterSceneRoom40 room40;
-    public EnterSceneRoom41 room41;
-    public EnterSceneRoom42 room42;
-    public EnterSceneRoom43 room43;
-    public EnterSceneRoom44 room44;
+    // public EnterSceneRoom25 room25;
+    // public EnterSceneRoom26 room26;
+    // public EnterSceneRoom27 room27;
+    // public EnterSceneRoom28 room28;
+    // public EnterSceneRoom29 room29;
+    // public EnterSceneRoom30 room30;
+    // public EnterSceneRoom31 room31;
+    // public EnterSceneRoom32 room32;
+    // public EnterSceneRoom33 room33;
+    // public EnterSceneRoom34 room34;
+    // public EnterSceneRoom35 room35;
+    // public EnterSceneRoom36 room36;
+    // public EnterSceneRoom37 room37;
+    // public EnterSceneRoom38 room38;
+    // public EnterSceneRoom39 room39;
+    // public EnterSceneRoom40 room40;
+    // public EnterSceneRoom41 room41;
+    // public EnterSceneRoom42 room42;
+    // public EnterSceneRoom43 room43;
+    // public EnterSceneRoom44 room44;
 
-    public EnterSceneRoom45 room45;
+    // public EnterSceneRoom45 room45;
 
     /* public EnterSceneRoom24 room24; */
 
@@ -75,11 +75,11 @@ public class RoomMaster : MonoBehaviour
     public int Room16EnterCounter;
     public int Room22EnterCounter;
 
-    public Camera theCamera;
-    public Transform cameraTarget;
-    public BoxCollider2D[] cameraBounds; 
-    private float halfHeight;
-    private float halfWidth;
+    // public Camera theCamera;
+    // public Transform cameraTarget;
+    // public BoxCollider2D[] cameraBounds; 
+    // private float halfHeight;
+    // private float halfWidth;
 
 
     // Start is called before the first frame update
@@ -88,8 +88,8 @@ public class RoomMaster : MonoBehaviour
         Camera.main.transform.position = room1.gameObject.transform.position;
         RoomOneEnterCounter = 0;
 
-        halfHeight = Camera.main.orthographicSize;
-        halfWidth = Camera.main.orthographicSize * Camera.main.aspect; 
+        // halfHeight = Camera.main.orthographicSize;
+        // halfWidth = Camera.main.orthographicSize * Camera.main.aspect; 
     }
 
     // Update is called once per frame
@@ -104,13 +104,13 @@ public class RoomMaster : MonoBehaviour
         if (room2.isInRoom2 == true)
         {
             
-            // if(Camera.main.transform.position.x < room2.gameObject.transform.position.x)
-            // Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            // if (Camera.main.transform.position.x > room2.gameObject.transform.position.x)
-            //     Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            theCamera.transform.position = new Vector3(cameraTarget.position.x, cameraTarget.position.y, -10f);
-            theCamera.transform.position = new Vector3(Mathf.Clamp(theCamera.transform.position.x, cameraBounds[1].bounds.min.x + halfWidth, cameraBounds[1].bounds.max.x - halfWidth),
-                Mathf.Clamp(theCamera.transform.position.y, cameraBounds[1].bounds.min.y + halfHeight, cameraBounds[1].bounds.max.y - halfHeight), -10f );
+            if(Camera.main.transform.position.x < room2.gameObject.transform.position.x)
+            Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+            if (Camera.main.transform.position.x > room2.gameObject.transform.position.x)
+                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+            // theCamera.transform.position = new Vector3(cameraTarget.position.x, cameraTarget.position.y, -10f);
+            // theCamera.transform.position = new Vector3(Mathf.Clamp(theCamera.transform.position.x, cameraBounds[1].bounds.min.x + halfWidth, cameraBounds[1].bounds.max.x - halfWidth),
+            //     Mathf.Clamp(theCamera.transform.position.y, cameraBounds[1].bounds.min.y + halfHeight, cameraBounds[1].bounds.max.y - halfHeight), -10f );
         }
         if (room3.isInRoom3 == true)
         {
@@ -350,237 +350,237 @@ public class RoomMaster : MonoBehaviour
             if (Camera.main.transform.position.y > room24.gameObject.transform.position.y)
                 Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
         }
-        if (room25.isInRoom25 == true)
-        {
-            if (Camera.main.transform.position.x < room25.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room25.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room25.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room25.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room26.isInRoom26 == true)
-        {
-            if (Camera.main.transform.position.x < room26.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room26.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room26.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room26.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room27.isInRoom27 == true)
-        {
-            if (Camera.main.transform.position.x < room27.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room27.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room27.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room27.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room28.isInRoom28 == true)
-        {
-            if (Camera.main.transform.position.x < room28.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room28.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room28.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room28.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room29.isInRoom29 == true)
-        {
-            if (Camera.main.transform.position.x < room29.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room29.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room29.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room29.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room30.isInRoom30 == true)
-        {
-            if (Camera.main.transform.position.x < room30.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room30.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room30.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room30.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room31.isInRoom31 == true)
-        {
-            if (Camera.main.transform.position.x < room31.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room31.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room31.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room31.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room32.isInRoom32 == true)
-        {
-            if (Camera.main.transform.position.x < room32.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room32.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room32.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room32.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room33.isInRoom33 == true)
-        {
-            if (Camera.main.transform.position.x < room33.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room33.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room33.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room33.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room34.isInRoom34 == true)
-        {
-            if (Camera.main.transform.position.x < room34.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room34.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room34.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room34.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room35.isInRoom35 == true)
-        {
-            if (Camera.main.transform.position.x < room35.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room35.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room35.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room35.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room36.isInRoom36 == true)
-        {
-            if (Camera.main.transform.position.x < room36.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room36.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room36.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room36.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room37.isInRoom37 == true)
-        {
-            if (Camera.main.transform.position.x < room37.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room37.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room37.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room37.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room38.isInRoom38 == true)
-        {
-            if (Camera.main.transform.position.x < room38.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room38.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room38.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room38.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room39.isInRoom39 == true)
-        {
-            if (Camera.main.transform.position.x < room39.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room39.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room39.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room39.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room40.isInRoom40 == true)
-        {
-            if (Camera.main.transform.position.x < room40.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room40.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room40.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room40.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room41.isInRoom41 == true)
-        {
-            if (Camera.main.transform.position.x < room41.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room41.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room41.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room41.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room42.isInRoom42 == true)
-        {
-            if (Camera.main.transform.position.x < room42.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room42.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room42.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room42.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room43.isInRoom43 == true)
-        {
-            if (Camera.main.transform.position.x < room43.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room43.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room43.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room43.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room44.isInRoom44 == true)
-        {
-            if (Camera.main.transform.position.x < room44.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room44.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room44.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room44.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        }
-        if (room45.isInRoom45 == true)
-        {
-            if (Camera.main.transform.position.x < room45.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room45.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.y < room45.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
-            if (Camera.main.transform.position.y > room45.gameObject.transform.position.y)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
-        } 
+        // if (room25.isInRoom25 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room25.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room25.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room25.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room25.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room26.isInRoom26 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room26.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room26.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room26.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room26.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room27.isInRoom27 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room27.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room27.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room27.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room27.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room28.isInRoom28 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room28.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room28.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room28.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room28.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room29.isInRoom29 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room29.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room29.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room29.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room29.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room30.isInRoom30 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room30.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room30.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room30.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room30.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room31.isInRoom31 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room31.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room31.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room31.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room31.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room32.isInRoom32 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room32.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room32.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room32.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room32.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room33.isInRoom33 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room33.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room33.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room33.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room33.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room34.isInRoom34 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room34.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room34.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room34.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room34.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room35.isInRoom35 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room35.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room35.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room35.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room35.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room36.isInRoom36 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room36.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room36.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room36.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room36.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room37.isInRoom37 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room37.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room37.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room37.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room37.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room38.isInRoom38 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room38.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room38.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room38.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room38.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room39.isInRoom39 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room39.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room39.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room39.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room39.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room40.isInRoom40 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room40.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room40.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room40.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room40.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room41.isInRoom41 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room41.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room41.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room41.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room41.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room42.isInRoom42 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room42.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room42.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room42.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room42.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room43.isInRoom43 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room43.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room43.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room43.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room43.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room44.isInRoom44 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room44.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room44.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room44.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room44.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // }
+        // if (room45.isInRoom45 == true)
+        // {
+        //     if (Camera.main.transform.position.x < room45.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.x > room45.gameObject.transform.position.x)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+        //     if (Camera.main.transform.position.y < room45.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 0.5f, -10f);
+        //     if (Camera.main.transform.position.y > room45.gameObject.transform.position.y)
+        //         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 0.5f, -10f);
+        // } 
 /*         if (room24.isInRoom24 == true)
         {
             if (Camera.main.transform.position.x < room24.gameObject.transform.position.x)

@@ -2058,6 +2058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endText: {fileID: 849749908}
+  alienCaptured: 0
 --- !u!61 &890550958
 BoxCollider2D:
   m_ObjectHideFlags: 0
