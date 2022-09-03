@@ -39,11 +39,13 @@ public class PlayerController : MonoBehaviour
     public bool isInAir;
     public float inAirCounter;
 
-    int activeSceneIndex; 
+    int activeSceneIndex;
+    public bool hasRescuedBlue; 
 
     // Start is called before the first frame update
     void Start()
     {
+        hasRescuedBlue = false; 
         activeSceneIndex = SceneManager.GetActiveScene().buildIndex; 
         isInUI = false; 
         jumpCounter = 0;

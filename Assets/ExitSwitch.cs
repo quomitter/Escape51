@@ -5,17 +5,19 @@ using UnityEngine.Events;
 
 public class ExitSwitch : MonoBehaviour
 {
-
-    public UnityEvent doorswitch1;
+    private PlayerController playerController; 
+    public UnityEvent doorSwitchExit;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(doorswitch1 == null){
-            doorswitch1 = new UnityEvent(); 
+        if(doorSwitchExit == null){
+            doorSwitchExit = new UnityEvent(); 
         }
-        doorswitch1.AddListener(DoorSwitch1);
+        doorSwitchExit.AddListener(DoorSwitch1);
+        playerController = FindObjectOfType<PlayerController>(); 
     }
+    
 
     // Update is called once per frame
     void Update()
@@ -24,17 +26,22 @@ public class ExitSwitch : MonoBehaviour
     }
 
     void DoorSwitch1(){
-        Debug.Log("you have escaped");
+        if(playerController.hasRescuedBlue){
+            Debug.Log("you have escaped");
+        }else{
+            Debug.Log("you have to rescue blue");
+        }
+        
     }
 
     void OnTriggerStay2D(Collider2D other){
         if(other.gameObject.tag == "Player" && Input.GetButtonDown("Fire1"))
         {
-            doorswitch1.Invoke();
+            doorSwitchExit.Invoke();
         }
     }    
 
     public void OpenDoor(){
-            doorswitch1.Invoke();
+            doorSwitchExit.Invoke();
     } 
 }

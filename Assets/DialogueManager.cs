@@ -58,7 +58,8 @@ public class DialogueManager : MonoBehaviour
         playerController.isInUI = false; 
     }
     public void StartBlueDialogue(BlueDialogue dialogue){
-        playerController.isInUI = true; 
+        playerController.isInUI = true;
+        playerController.hasRescuedBlue = true; 
         dialogueCanvas.gameObject.SetActive(true);
 
         nameText.text = dialogue.name; 
