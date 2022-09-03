@@ -7,8 +7,10 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue; 
     private bool wasNotTriggered;
+    private PlayerController playerController; 
     
     void Start(){
+        playerController = FindObjectOfType<PlayerController>(); 
         wasNotTriggered = true; 
     }
 
@@ -16,6 +18,8 @@ public class DialogueTrigger : MonoBehaviour
         if(other.gameObject.tag == "Player" && wasNotTriggered){
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
             wasNotTriggered = false; 
+            if(!playerController.hasRescuedBlue)
+                wasNotTriggered = true; 
         }
     }
 
