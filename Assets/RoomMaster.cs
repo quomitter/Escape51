@@ -68,18 +68,28 @@ public class RoomMaster : MonoBehaviour
     public GameObject enemyThreeInRoom22;
     
     public int RoomOneEnterCounter;
+   
     public int RoomSixEnterCounter;
     public int Room12EnterCounter;
     public int Room13EnterCounter;
     public int Room16EnterCounter;
     public int Room22EnterCounter;
 
+    public Camera theCamera;
+    public Transform cameraTarget;
+    public BoxCollider2D[] cameraBounds; 
+    private float halfHeight;
+    private float halfWidth;
+
 
     // Start is called before the first frame update
     void Start()
     {
         Camera.main.transform.position = room1.gameObject.transform.position;
-        RoomOneEnterCounter = 0; 
+        RoomOneEnterCounter = 0;
+
+        halfHeight = Camera.main.orthographicSize;
+        halfWidth = Camera.main.orthographicSize * Camera.main.aspect; 
     }
 
     // Update is called once per frame
@@ -93,10 +103,14 @@ public class RoomMaster : MonoBehaviour
         }
         if (room2.isInRoom2 == true)
         {
-            if(Camera.main.transform.position.x < room2.gameObject.transform.position.x)
-            Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
-            if (Camera.main.transform.position.x > room2.gameObject.transform.position.x)
-                Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+            
+            // if(Camera.main.transform.position.x < room2.gameObject.transform.position.x)
+            // Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + 0.5f, Camera.main.transform.position.y, -10f);
+            // if (Camera.main.transform.position.x > room2.gameObject.transform.position.x)
+            //     Camera.main.transform.position = new Vector3(Camera.main.transform.position.x - 0.5f, Camera.main.transform.position.y, -10f);
+            theCamera.transform.position = new Vector3(cameraTarget.position.x, cameraTarget.position.y, -10f);
+            theCamera.transform.position = new Vector3(Mathf.Clamp(theCamera.transform.position.x, cameraBounds[1].bounds.min.x + halfWidth, cameraBounds[1].bounds.max.x - halfWidth),
+                Mathf.Clamp(theCamera.transform.position.y, cameraBounds[1].bounds.min.y + halfHeight, cameraBounds[1].bounds.max.y - halfHeight), -10f );
         }
         if (room3.isInRoom3 == true)
         {
