@@ -657,6 +657,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6378479020592385992, guid: f75d6cb0e79b249468103bf2f8a18353, type: 3}
+      propertyPath: playerTarget
+      value: 
+      objectReference: {fileID: 2130414945}
     - target: {fileID: 7725244756862394333, guid: f75d6cb0e79b249468103bf2f8a18353, type: 3}
       propertyPath: m_Name
       value: Ceiling_GunRoom12(1)
@@ -726,6 +730,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2101020558219234154, guid: 5c8f271b28e3e794a85367590dd5af6e, type: 3}
+      propertyPath: playerTarget
+      value: 
+      objectReference: {fileID: 2130414945}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c8f271b28e3e794a85367590dd5af6e, type: 3}
 --- !u!1 &402490266
@@ -1520,6 +1528,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySoldier_Room_22 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2101020558219234154, guid: 5c8f271b28e3e794a85367590dd5af6e, type: 3}
+      propertyPath: playerTarget
+      value: 
+      objectReference: {fileID: 2130414945}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c8f271b28e3e794a85367590dd5af6e, type: 3}
 --- !u!1 &605946811
@@ -31300,6 +31312,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6378479020592385992, guid: f75d6cb0e79b249468103bf2f8a18353, type: 3}
+      propertyPath: playerTarget
+      value: 
+      objectReference: {fileID: 2130414945}
     - target: {fileID: 7725244756862394333, guid: f75d6cb0e79b249468103bf2f8a18353, type: 3}
       propertyPath: m_Name
       value: Ceiling_Gun (2)
@@ -31666,6 +31682,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6378479020592385992, guid: f75d6cb0e79b249468103bf2f8a18353, type: 3}
+      propertyPath: playerTarget
+      value: 
+      objectReference: {fileID: 2130414945}
     - target: {fileID: 7725244756862394333, guid: f75d6cb0e79b249468103bf2f8a18353, type: 3}
       propertyPath: m_Name
       value: Ceiling_Gun (3)
@@ -31953,6 +31973,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6378479020592385992, guid: f75d6cb0e79b249468103bf2f8a18353, type: 3}
+      propertyPath: playerTarget
+      value: 
+      objectReference: {fileID: 2130414945}
     - target: {fileID: 7725244756862394333, guid: f75d6cb0e79b249468103bf2f8a18353, type: 3}
       propertyPath: m_Name
       value: Ceiling_Gun_Room_22 (1)
@@ -32090,6 +32114,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2101020558219234154, guid: 5c8f271b28e3e794a85367590dd5af6e, type: 3}
+      propertyPath: playerTarget
+      value: 
+      objectReference: {fileID: 2130414945}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c8f271b28e3e794a85367590dd5af6e, type: 3}
 --- !u!1001 &1591798117
@@ -32339,6 +32367,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6378479020592385992, guid: f75d6cb0e79b249468103bf2f8a18353, type: 3}
+      propertyPath: playerTarget
+      value: 
+      objectReference: {fileID: 2130414945}
     - target: {fileID: 7725244756862394333, guid: f75d6cb0e79b249468103bf2f8a18353, type: 3}
       propertyPath: m_Name
       value: Ceiling_GunRoom12
@@ -32400,6 +32432,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6378479020592385992, guid: f75d6cb0e79b249468103bf2f8a18353, type: 3}
+      propertyPath: playerTarget
+      value: 
+      objectReference: {fileID: 2130414945}
     - target: {fileID: 7725244756862394333, guid: f75d6cb0e79b249468103bf2f8a18353, type: 3}
       propertyPath: m_Name
       value: Ceiling_Gun_Room_22
@@ -32640,6 +32676,7 @@ MonoBehaviour:
   bulletSpeed: 15
   fireRate: 0.2
   lastShot: 0
+  playerTarget: {fileID: 2130414945}
 --- !u!50 &1890753501
 Rigidbody2D:
   serializedVersion: 4
@@ -33529,6 +33566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySoldier
       objectReference: {fileID: 0}
+    - target: {fileID: 2101020558219234154, guid: 5c8f271b28e3e794a85367590dd5af6e, type: 3}
+      propertyPath: playerTarget
+      value: 
+      objectReference: {fileID: 2130414945}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c8f271b28e3e794a85367590dd5af6e, type: 3}
 --- !u!4 &2887126187668917609
@@ -33790,7 +33831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyBullet: {fileID: 1254621629567811377, guid: 2f70664cc3d3cb148ad0ebe0eef30a48, type: 3}
   firePoint: {fileID: 2887126187668917609}
-  playerTarget: {x: 0, y: 0}
+  playerTarget: {fileID: 2130414945}
   fireRateCoolDown: 0
 --- !u!114 &6378479020710968860
 MonoBehaviour:
@@ -33806,7 +33847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyBullet: {fileID: 1254621629567811377, guid: 2f70664cc3d3cb148ad0ebe0eef30a48, type: 3}
   firePoint: {fileID: 2887126188703494866}
-  playerTarget: {x: 0, y: 0}
+  playerTarget: {fileID: 2130414945}
   fireRateCoolDown: 0
 --- !u!212 &7304897430901897872
 SpriteRenderer:
