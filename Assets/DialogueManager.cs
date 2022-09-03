@@ -16,19 +16,21 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     public GameObject doorOne; 
 
+    private PlayerController playerController; 
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        playerController = FindObjectOfType<PlayerController>(); 
         dialogueButton.onClick.AddListener(DisplayNextSentence);
         dialogueCanvas.gameObject.SetActive(false);
         sentences = new Queue<string>(); 
     }
 
     public void StartDialogue(Dialogue dialogue){
-
+        playerController.isInUI = true; 
         dialogueCanvas.gameObject.SetActive(true);
 
         nameText.text = dialogue.name; 
@@ -53,6 +55,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue(){
         dialogueCanvas.gameObject.SetActive(false);
         doorOne.gameObject.SetActive(false);
+        playerController.isInUI = false; 
     }
 
 }

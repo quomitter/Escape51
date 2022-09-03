@@ -33,14 +33,19 @@ public class PlayerController : MonoBehaviour
     public float canRollTimeLeft = 1f;
 
     public bool isDead;
+    public bool isInUI; 
     public PlayerHealthController playerHealthController;
     public float isDeadCounter;
     public bool isInAir;
     public float inAirCounter;
 
+    int activeSceneIndex; 
+
     // Start is called before the first frame update
     void Start()
     {
+        activeSceneIndex = SceneManager.GetActiveScene().buildIndex; 
+        isInUI = false; 
         jumpCounter = 0;
         isDeadCounter = 0;
         canRoll = true;
@@ -54,6 +59,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!isInUI){
         if (!isDead)
         {
             playerRB.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, playerRB.velocity.y);
@@ -128,7 +134,9 @@ public class PlayerController : MonoBehaviour
                 moveSpeed = 8f; 
             }
                   
-        }
+        }}
+
+
         if (isInAir)
         {
             inAirCounter += Time.deltaTime;
@@ -147,7 +155,7 @@ public class PlayerController : MonoBehaviour
             playerRB.constraints = RigidbodyConstraints2D.FreezePosition;
             if(isDeadCounter > 5)
             {
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(activeSceneIndex);
             }
         }
     }
