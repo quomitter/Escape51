@@ -4324,7 +4324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &579520328
 Transform:
   m_ObjectHideFlags: 0
@@ -5610,7 +5610,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 402490267}
   m_HandleRect: {fileID: 0}
@@ -6060,7 +6060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.77254903}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -7527,7 +7527,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.53850937, y: -0.021979988}
@@ -71278,7 +71278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1757238850
 Transform:
   m_ObjectHideFlags: 0
@@ -76042,11 +76042,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8787691946311323715, guid: b30da05582601d147a28a5b926094389, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9
+      value: -4.28
       objectReference: {fileID: 0}
     - target: {fileID: 8787691946311323715, guid: b30da05582601d147a28a5b926094389, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.93
+      value: -1.87
       objectReference: {fileID: 0}
     - target: {fileID: 8787691946311323715, guid: b30da05582601d147a28a5b926094389, type: 3}
       propertyPath: m_LocalPosition.z
