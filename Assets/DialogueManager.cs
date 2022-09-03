@@ -57,5 +57,18 @@ public class DialogueManager : MonoBehaviour
         doorOne.gameObject.SetActive(false);
         playerController.isInUI = false; 
     }
+    public void StartBlueDialogue(BlueDialogue dialogue){
+        playerController.isInUI = true; 
+        dialogueCanvas.gameObject.SetActive(true);
+
+        nameText.text = dialogue.name; 
+
+        sentences.Clear(); 
+
+        foreach(string sentence in dialogue.sentences){
+            sentences.Enqueue(sentence);
+        }
+            DisplayNextSentence();
+    }
 
 }
