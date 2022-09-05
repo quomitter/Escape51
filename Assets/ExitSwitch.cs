@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement; 
 
 public class ExitSwitch : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class ExitSwitch : MonoBehaviour
     void DoorSwitch1(){
         if(playerController.hasRescuedBlue){
             Debug.Log("you have escaped");
+            SceneManager.LoadScene(2);
         }else{
             Debug.Log("you have to rescue blue");
         }
