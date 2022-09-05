@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -894,14 +894,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Tile_Set_Background-export_23: 1933502666
       Tile_Set_Background-export_12: -1957798184
       Tile_Set_Background-export_17: -1391717172
-      Tile_Set_Background-export_27: 518482302
+      Tile_Set_Background-export_35: -1972746170
       Tile_Set_Background-export_32: -61526159
-      Tile_Set_Background-export_31: 622952567
       Tile_Set_Background-export_29: -1401225747
       Tile_Set_Background-export_11: -921678402
-      Tile_Set_Background-export_35: -1972746170
       Tile_Set_Background-export_21: -58199953
       Tile_Set_Background-export_33: -45214633
       Tile_Set_Background-export_34: -872769307
@@ -918,18 +917,19 @@ TextureImporter:
       Tile_Set_Background-export_26: -953364424
       Tile_Set_Background-export_20: -1920009224
       Tile_Set_Background-export_0: 1871444221
-      Tile_Set_Background-export_8: -1856338100
+      Tile_Set_Background-export_22: 1784220616
       Tile_Set_Background-export_6: 674149034
+      Tile_Set_Background-export_8: -1856338100
+      Tile_Set_Background-export_27: 518482302
       Tile_Set_Background-export_13: -1925674706
-      Tile_Set_Background-export_14: -1970567447
       Tile_Set_Background-export_9: -905337798
       Tile_Set_Background-export_1: 1067258084
-      Tile_Set_Background-export_15: 1316287181
       Tile_Set_Background-export_2: -310755783
-      Tile_Set_Background-export_22: 1784220616
+      Tile_Set_Background-export_15: 1316287181
+      Tile_Set_Background-export_14: -1970567447
+      Tile_Set_Background-export_31: 622952567
       Tile_Set_Background-export_24: -1300038402
       Tile_Set_Background-export_16: -498601390
-      Tile_Set_Background-export_23: 1933502666
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
