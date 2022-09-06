@@ -6,6 +6,10 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
+    
+    AudioSource audioSource;
+    public AudioClip jumpSound; 
+    public AudioClip gunSound;  
     public Animator anim;
 
     public Rigidbody2D playerRB;
@@ -45,6 +49,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>(); 
         hasRescuedBlue = false; 
         activeSceneIndex = SceneManager.GetActiveScene().buildIndex; 
         isInUI = false; 
@@ -77,6 +82,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetButtonDown("Jump") && jumpCounter < 1)
             {
+                audioSource.PlayOneShot(jumpSound, 0.25f);
                 jumpCounter++;
                 playerRB.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
             }
@@ -87,6 +93,7 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("isShooting", true);
                 if (Time.time > fireRate + lastShot)
                 {
+                    audioSource.PlayOneShot(gunSound, 0.25f);
                     GameObject clone = Instantiate(laserShot, firePoint.position, firePoint.rotation);
                     Physics2D.IgnoreCollision(clone.GetComponent<Collider2D>(), playerRB.GetComponent<Collider2D>());
                     Rigidbody2D shot = clone.GetComponent<Rigidbody2D>();
