@@ -34049,6 +34049,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8787691947714559641, guid: b30da05582601d147a28a5b926094389, type: 3}
+      propertyPath: gunSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 36ad51f44860b0d45bec331b0e5a0212, type: 3}
+    - target: {fileID: 8787691947714559641, guid: b30da05582601d147a28a5b926094389, type: 3}
       propertyPath: deathText
       value: 
       objectReference: {fileID: 1873879002}
@@ -34056,5 +34060,9 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 600
       objectReference: {fileID: 0}
+    - target: {fileID: 8787691947714559641, guid: b30da05582601d147a28a5b926094389, type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1f46488db58b88a45b7e61365bc4875d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b30da05582601d147a28a5b926094389, type: 3}
