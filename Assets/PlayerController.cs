@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetButtonDown("Jump") && jumpCounter < 1)
             {
-                audioSource.PlayOneShot(jumpSound, 0.25f);
+                audioSource.PlayOneShot(jumpSound, 0.35f);
                 jumpCounter++;
                 playerRB.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
             }
@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("isShooting", true);
                 if (Time.time > fireRate + lastShot)
                 {
-                    audioSource.PlayOneShot(gunSound, 0.25f);
+                    audioSource.PlayOneShot(gunSound, 0.35f);
                     GameObject clone = Instantiate(laserShot, firePoint.position, firePoint.rotation);
                     Physics2D.IgnoreCollision(clone.GetComponent<Collider2D>(), playerRB.GetComponent<Collider2D>());
                     Rigidbody2D shot = clone.GetComponent<Rigidbody2D>();
