@@ -8719,8 +8719,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 790601164}
-  - component: {fileID: 790601163}
   - component: {fileID: 790601162}
+  - component: {fileID: 790601165}
   m_Layer: 0
   m_Name: ExitSwitch
   m_TagString: Untagged
@@ -8754,21 +8754,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.944458, y: 3.5479116}
   m_EdgeRadius: 0
---- !u!114 &790601163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 790601161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a6b58589857fd2479efb5641374dcea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorSwitchExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &790601164
 Transform:
   m_ObjectHideFlags: 0
@@ -8777,13 +8762,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790601161}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 166, y: -10, z: 0}
+  m_LocalPosition: {x: 216.59, y: 6.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &790601165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790601161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f64d4f650ae8241bef83557bfebd8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &795891378
 GameObject:
   m_ObjectHideFlags: 0
