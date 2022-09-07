@@ -71,6 +71,11 @@ public class PlayerController : MonoBehaviour
             if (!isDead)
             {
                 playerRB.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, playerRB.velocity.y);
+                if(playerRB.velocity.x > 1 || playerRB.velocity.x < -1){
+                    anim.SetBool("isWalking", true);
+                }else{
+                    anim.SetBool("isWalking", false);
+                }
 
                 if (playerRB.velocity.x > 0 && m_FacingRight)
                 {
