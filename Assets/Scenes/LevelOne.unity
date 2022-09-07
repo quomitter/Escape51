@@ -410,6 +410,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInRoom22: 0
+--- !u!1 &235411625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 235411626}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &235411626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235411625}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.055, y: -0.994, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2130414945}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &241912974
 GameObject:
   m_ObjectHideFlags: 0
@@ -2849,7 +2880,7 @@ GameObject:
   - component: {fileID: 1208543279}
   - component: {fileID: 1208543278}
   - component: {fileID: 1208543280}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -34160,5 +34191,13 @@ PrefabInstance:
       propertyPath: jumpSound
       value: 
       objectReference: {fileID: 8300000, guid: 1f46488db58b88a45b7e61365bc4875d, type: 3}
+    - target: {fileID: 8787691947714559641, guid: b30da05582601d147a28a5b926094389, type: 3}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 235411626}
+    - target: {fileID: 8787691947714559641, guid: b30da05582601d147a28a5b926094389, type: 3}
+      propertyPath: whatIsGround.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b30da05582601d147a28a5b926094389, type: 3}

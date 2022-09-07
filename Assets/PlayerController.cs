@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D playerRB;
     public GameObject laserShot;
     public Transform firePoint;
+    public Transform groundCheck;
+    public LayerMask whatIsGround;
     public TMP_Text deathText;
 
     public Vector2 direction;
@@ -40,11 +42,12 @@ public class PlayerController : MonoBehaviour
     public bool isInUI;
     public PlayerHealthController playerHealthController;
     public float isDeadCounter;
-    public bool isInAir;
+
     public float inAirCounter;
 
     int activeSceneIndex;
     public bool hasRescuedBlue;
+    public bool isGrounded; 
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +73,7 @@ public class PlayerController : MonoBehaviour
         {
             if (!isDead)
             {
+                isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, whatIsGround);
                 playerRB.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, playerRB.velocity.y);
                 if(playerRB.velocity.x > 1 || playerRB.velocity.x < -1){
                     anim.SetBool("isWalking", true);
@@ -86,11 +90,13 @@ public class PlayerController : MonoBehaviour
                     Flip();
                 }
 
-                if (Input.GetButtonDown("Jump") && jumpCounter < 1)
+                if (Input.GetButtonDown("Jump") && (jumpCounter < 2  || isGrounded))
                 {
                     audioSource.PlayOneShot(jumpSound, 0.35f);
-                    jumpCounter++;
                     playerRB.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
+                    jumpCounter++;
+                }else if(isGrounded && jumpCounter > 0){
+                    jumpCounter = 0; 
                 }
 
 
@@ -152,16 +158,12 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-
-        if (isInAir)
-        {
-            inAirCounter += Time.deltaTime;
-        }
         if (playerHealthController.currentHealth <= 0)
         {
             isDead = true;
             anim.SetBool("isDead", true);
         }
+
         if (isDead == true)
         {
             isDeadCounter += Time.deltaTime;
@@ -176,34 +178,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (gameObject.tag == "Player" && other.gameObject.tag == "Ground")
-        {
-            jumpCounter = 0;
-            isInAir = false;
-            if (inAirCounter > 0.4f)
-            {
-                playerHealthController.currentHealth = playerHealthController.currentHealth - (int)inAirCounter * 2;
-                playerHealthController.healthSlider.value = playerHealthController.currentHealth;
-                inAirCounter = 0;
-            }
-            else
-            {
-                inAirCounter = 0;
-            }
 
-
-
-        }
-    }
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if (gameObject.tag == "Player" && other.gameObject.tag == "Ground")
-        {
-            isInAir = true;
-        }
-    }
 
     private void Flip()
     {
