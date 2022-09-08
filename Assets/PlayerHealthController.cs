@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerHealthController : MonoBehaviour
 {
+    AudioSource audioSource; 
+    public AudioClip hurtSound; 
     public Slider healthSlider;
 
     public int currentHealth;
@@ -20,6 +22,7 @@ public class PlayerHealthController : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        audioSource = GetComponent<AudioSource>(); 
     }
 
     // Update is called once per frame
@@ -30,7 +33,7 @@ public class PlayerHealthController : MonoBehaviour
 
     public void DamagePlayer(int damageAmount)
     {
-    
+            audioSource.PlayOneShot(hurtSound, 0.45f);
             currentHealth -= damageAmount;
 
             if (currentHealth <= 0)

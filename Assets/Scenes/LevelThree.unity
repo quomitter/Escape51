@@ -61886,6 +61886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8898e000946cc3841862a65661119b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hurtSound: {fileID: 8300000, guid: bfd9058dfcbe0ab46aa9b8f78f4ce96d, type: 3}
   healthSlider: {fileID: 689958062}
   currentHealth: 0
   maxHealth: 10
