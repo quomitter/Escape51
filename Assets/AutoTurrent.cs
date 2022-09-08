@@ -16,9 +16,12 @@ public class AutoTurrent : MonoBehaviour
     public Transform playerTarget; 
 
     private PlayerHealthController playerHealthController;
+    AudioSource audioSource; 
+    public AudioClip enemyLazerSound;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>(); 
         playerHealthController = GameObject.Find("Alien_Green").GetComponent<PlayerHealthController>();
     }
 
@@ -28,6 +31,7 @@ public class AutoTurrent : MonoBehaviour
         if(Vector2.Distance( playerTarget.transform.position, this.transform.position) < 10){
         if (Time.time > fireRate + lastShot)
         {
+            audioSource.PlayOneShot(enemyLazerSound, 0.45f);
             GameObject clone = Instantiate(bullet, firePoint.position, firePoint.rotation);
             Physics2D.IgnoreCollision(clone.GetComponent<Collider2D>(), autoTurrent.GetComponent<Collider2D>());
             Rigidbody2D shot = clone.GetComponent<Rigidbody2D>();

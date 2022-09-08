@@ -8,11 +8,14 @@ public class Enemy1 : MonoBehaviour
     [SerializeField] Transform firePoint;
     [SerializeField] Transform playerTarget;
     [SerializeField] float fireRateCoolDown;
+    AudioSource audioSource; 
+     public AudioClip enemyLazerSound; 
     
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>(); 
         fireRateCoolDown = 2f;
        
     }
@@ -26,6 +29,7 @@ public class Enemy1 : MonoBehaviour
             fireRateCoolDown -= Time.deltaTime;
             if (fireRateCoolDown < 0)
             {
+                audioSource.PlayOneShot(enemyLazerSound, 0.45f);
                 Instantiate(enemyBullet, firePoint.position, firePoint.rotation);
                 fireRateCoolDown = 2f; 
 

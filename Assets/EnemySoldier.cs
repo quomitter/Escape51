@@ -12,12 +12,15 @@ public class EnemySoldier : MonoBehaviour
     public float fireRate = 0.2f;
     public float lastShot = 0f;
     public Transform playerTarget; 
+    AudioSource audioSource; 
+    public AudioClip enemyLazerSound; 
 
     private PlayerHealthController playerHealthController; 
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>(); 
         playerHealthController = GameObject.Find("Alien_Green").GetComponent<PlayerHealthController>();
     }
 
@@ -35,6 +38,7 @@ public class EnemySoldier : MonoBehaviour
        if(Vector2.Distance( playerTarget.transform.position, this.transform.position) < 10){
         if (Time.time > fireRate + lastShot)
         {
+            audioSource.PlayOneShot(enemyLazerSound, 0.45f);
             GameObject clone = Instantiate(bullet, firePoint.position, firePoint.rotation);
             Physics2D.IgnoreCollision(clone.GetComponent<Collider2D>(), enemySoldier.GetComponent<Collider2D>());
             Rigidbody2D shot = clone.GetComponent<Rigidbody2D>();
