@@ -7,7 +7,7 @@ public class PlayerHealthController : MonoBehaviour
 {
     AudioSource audioSource; 
     public AudioClip hurtSound; 
-    public Slider healthSlider;
+
 
     public int currentHealth;
     public int maxHealth = 10;
@@ -53,13 +53,11 @@ public class PlayerHealthController : MonoBehaviour
                 //AudioManager.instance.PlaySFXAdjusted(11);
             }
 
-            healthSlider.value = currentHealth;
         
     }
     public void FillHealth()
     {
         currentHealth = maxHealth;
 
-        healthSlider.value = currentHealth;
     }
 }
