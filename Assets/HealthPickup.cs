@@ -5,10 +5,13 @@ using UnityEngine;
 public class HealthPickup : MonoBehaviour
 {
     public PlayerHealthController playerHealthController; 
+    AudioSource audioSource; 
+    public AudioClip healthPickupSound;
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>(); 
         playerHealthController = GameObject.Find("Alien_Green").GetComponent<PlayerHealthController>();
     }
 
@@ -22,6 +25,7 @@ public class HealthPickup : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
+            audioSource.PlayOneShot(healthPickupSound, 0.45f);
             playerHealthController.FillHealth();
             this.gameObject.SetActive(false);
         }
