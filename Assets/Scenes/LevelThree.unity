@@ -739,6 +739,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -383
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -285
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391360085326313185, guid: 9accd34d982491241962c1271110ecb9, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 1391360085326313186, guid: 9accd34d982491241962c1271110ecb9, type: 3}
       propertyPath: m_Name
       value: HealthBar (1)
