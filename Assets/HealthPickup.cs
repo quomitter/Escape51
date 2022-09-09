@@ -25,7 +25,7 @@ public class HealthPickup : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            audioSource.PlayOneShot(healthPickupSound, 0.45f);
+            AudioSource.PlayClipAtPoint(healthPickupSound, transform.position, 0.45f);
             playerHealthController.FillHealth();
             this.gameObject.SetActive(false);
         }

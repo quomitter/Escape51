@@ -1328,7 +1328,8 @@ PrefabInstance:
       propertyPath: healthPickupSound
       value: 
       objectReference: {fileID: 8300000, guid: f6b2113f7a83e53489e46f88b7c3d805, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9133156663273168770, guid: 56706c21af697a34b9c500bf946ce43f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 56706c21af697a34b9c500bf946ce43f, type: 3}
 --- !u!1 &519420028
 GameObject:
@@ -3300,7 +3301,8 @@ PrefabInstance:
       propertyPath: healthPickupSound
       value: 
       objectReference: {fileID: 8300000, guid: f6b2113f7a83e53489e46f88b7c3d805, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9133156663273168770, guid: 56706c21af697a34b9c500bf946ce43f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 56706c21af697a34b9c500bf946ce43f, type: 3}
 --- !u!1 &1140898001 stripped
 GameObject:
@@ -32238,7 +32240,8 @@ PrefabInstance:
       propertyPath: healthPickupSound
       value: 
       objectReference: {fileID: 8300000, guid: f6b2113f7a83e53489e46f88b7c3d805, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9133156663273168770, guid: 56706c21af697a34b9c500bf946ce43f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 56706c21af697a34b9c500bf946ce43f, type: 3}
 --- !u!1 &1593276118
 GameObject:
@@ -32335,7 +32338,8 @@ PrefabInstance:
       propertyPath: healthPickupSound
       value: 
       objectReference: {fileID: 8300000, guid: f6b2113f7a83e53489e46f88b7c3d805, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9133156663273168770, guid: 56706c21af697a34b9c500bf946ce43f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 56706c21af697a34b9c500bf946ce43f, type: 3}
 --- !u!1 &1747007817 stripped
 GameObject:
@@ -34184,7 +34188,8 @@ PrefabInstance:
       propertyPath: healthPickupSound
       value: 
       objectReference: {fileID: 8300000, guid: f6b2113f7a83e53489e46f88b7c3d805, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9133156663273168770, guid: 56706c21af697a34b9c500bf946ce43f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 56706c21af697a34b9c500bf946ce43f, type: 3}
 --- !u!61 &3811475299402137066
 BoxCollider2D:
