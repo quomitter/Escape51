@@ -43,11 +43,6 @@ public class PlayerHealthController : MonoBehaviour
             {
                 currentHealth = 0;
 
-                //gameObject.SetActive(false);
-
-                //RespawnController.instance.Respawn();
-
-                //AudioManager.instance.PlaySFX(8);
             }
         }
 
