@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerHealthController : MonoBehaviour
 {
-    AudioSource audioSource; 
-    public AudioClip hurtSound; 
+    AudioSource audioSource;
+    public AudioClip hurtSound;
 
-
+    PlayerController playerController;
     public int currentHealth;
     public int maxHealth = 10;
 
@@ -21,18 +21,21 @@ public class PlayerHealthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerController = FindObjectOfType<PlayerController>();
         currentHealth = maxHealth;
-        audioSource = GetComponent<AudioSource>(); 
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
-    { 
-    
+    {
+
     }
 
     public void DamagePlayer(int damageAmount)
     {
+        if (!playerController.isRolling)
+        {
             audioSource.PlayOneShot(hurtSound, 0.45f);
             currentHealth -= damageAmount;
 
@@ -46,14 +49,10 @@ public class PlayerHealthController : MonoBehaviour
 
                 //AudioManager.instance.PlaySFX(8);
             }
-            else
-            {
-                invincCounter = invincibilityLength;
+        }
 
-                //AudioManager.instance.PlaySFXAdjusted(11);
-            }
 
-        
+
     }
     public void FillHealth()
     {
