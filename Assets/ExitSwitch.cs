@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement; 
+using UnityEngine.UI; 
 
 public class ExitSwitch : MonoBehaviour
 {
     private PlayerController playerController; 
     public UnityEvent doorSwitchExit;
+    [SerializeField] private Canvas canvas; 
 
     // Start is called before the first frame update
     void Start()
@@ -17,13 +19,16 @@ public class ExitSwitch : MonoBehaviour
         }
         doorSwitchExit.AddListener(DoorSwitch1);
         playerController = FindObjectOfType<PlayerController>(); 
+        canvas.gameObject.SetActive(false);
     }
     
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(playerController.hasRescuedBlue){
+            canvas.gameObject.SetActive(false);
+        }
     }
 
     void DoorSwitch1(){
@@ -31,7 +36,7 @@ public class ExitSwitch : MonoBehaviour
             Debug.Log("you have escaped");
             SceneManager.LoadScene(2);
         }else{
-            Debug.Log("you have to rescue blue");
+            canvas.gameObject.SetActive(true);
         }
         
     }
