@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
         {
             if (!isDead)
             {
-                isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, whatIsGround);
+                isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, whatIsGround);
                 playerRB.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, playerRB.velocity.y);
                 if(playerRB.velocity.x > 1 || playerRB.velocity.x < -1){
                     anim.SetBool("isWalking", true);
@@ -90,15 +90,17 @@ public class PlayerController : MonoBehaviour
                     Flip();
                 }
 
-                if (Input.GetButtonDown("Jump") && (jumpCounter < 2  || isGrounded))
+                if (Input.GetButtonDown("Jump") && jumpCounter < 2)
                 {
                     audioSource.PlayOneShot(jumpSound, 0.35f);
                     playerRB.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
-                    jumpCounter++;
-                }else if(isGrounded && jumpCounter > 0){
+                    
+                }else if(isGrounded){
                     jumpCounter = 0; 
                 }
-
+                if(Input.GetButtonUp("Jump")){
+                    jumpCounter++; 
+                }
 
                 if (Input.GetButton("Fire1") && !isRolling)
                 {
