@@ -8,32 +8,39 @@ public class Enemy1 : MonoBehaviour
     [SerializeField] Transform firePoint;
     [SerializeField] Transform playerTarget;
     [SerializeField] float fireRateCoolDown;
-    AudioSource audioSource; 
-     public AudioClip enemyLazerSound; 
-    
+    AudioSource audioSource;
+    public AudioClip enemyLazerSound;
+    PlayerController playerController;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>(); 
+        playerController = FindObjectOfType<PlayerController>();
+        audioSource = GetComponent<AudioSource>();
         fireRateCoolDown = 2f;
-       
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Vector2.Distance( playerTarget.transform.position, this.transform.position) < 10){
-        if (fireRateCoolDown > 0)
+        if (!playerController.isInUI)
         {
-            fireRateCoolDown -= Time.deltaTime;
-            if (fireRateCoolDown < 0)
+            if (Vector2.Distance(playerTarget.transform.position, this.transform.position) < 10)
             {
-                audioSource.PlayOneShot(enemyLazerSound, 0.45f);
-                Instantiate(enemyBullet, firePoint.position, firePoint.rotation);
-                fireRateCoolDown = 2f; 
+                if (fireRateCoolDown > 0)
+                {
+                    fireRateCoolDown -= Time.deltaTime;
+                    if (fireRateCoolDown < 0)
+                    {
+                        audioSource.PlayOneShot(enemyLazerSound, 0.45f);
+                        Instantiate(enemyBullet, firePoint.position, firePoint.rotation);
+                        fireRateCoolDown = 2f;
 
+                    }
+                }
             }
-        }}
+        }
     }
 }
