@@ -740,12 +740,36 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.3593125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.17361113
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.040000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.02633334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -21.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -18.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -383
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -285
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1391360085326313185, guid: 9accd34d982491241962c1271110ecb9, type: 3}
       propertyPath: m_Camera
