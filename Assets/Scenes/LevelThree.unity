@@ -741,35 +741,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.3593125
+      value: 0.18318748
       objectReference: {fileID: 0}
     - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.17361113
+      value: 0.09577778
       objectReference: {fileID: 0}
     - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.040000003
+      value: 0.0234375
       objectReference: {fileID: 0}
     - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.02633334
+      value: 0.023555562
       objectReference: {fileID: 0}
     - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -21.5
+      value: -10.25
       objectReference: {fileID: 0}
     - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -18.5
+      value: -8.25
       objectReference: {fileID: 0}
     - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.5
+      value: -4.000061
       objectReference: {fileID: 0}
     - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3
+      value: -2.125
       objectReference: {fileID: 0}
     - target: {fileID: 1391360085326313185, guid: 9accd34d982491241962c1271110ecb9, type: 3}
       propertyPath: m_Camera
@@ -3559,6 +3559,37 @@ Transform:
   - {fileID: 1889348589}
   m_Father: {fileID: 1848469467}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &513170964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 513170965}
+  m_Layer: 0
+  m_Name: WallCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &513170965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513170964}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2130414945}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -63611,6 +63642,10 @@ PrefabInstance:
       propertyPath: jumpSound
       value: 
       objectReference: {fileID: 8300000, guid: a72878390187f1e4d928ba6f5c8bba5f, type: 3}
+    - target: {fileID: 8787691947714559641, guid: b30da05582601d147a28a5b926094389, type: 3}
+      propertyPath: wallCheck
+      value: 
+      objectReference: {fileID: 513170965}
     - target: {fileID: 8787691947714559641, guid: b30da05582601d147a28a5b926094389, type: 3}
       propertyPath: bulletSpeed
       value: 20

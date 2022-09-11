@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public GameObject laserShot;
     public Transform firePoint;
     public Transform groundCheck;
+    public Transform wallCheck; 
     public LayerMask whatIsGround;
     public TMP_Text deathText;
 
@@ -47,7 +48,8 @@ public class PlayerController : MonoBehaviour
 
     int activeSceneIndex;
     public bool hasRescuedBlue;
-    public bool isGrounded; 
+    public bool isGrounded;
+    public bool isTouchingWall;  
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +76,7 @@ public class PlayerController : MonoBehaviour
             if (!isDead)
             {
                 isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, whatIsGround);
+                isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, 0.1f, whatIsGround);
                 playerRB.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, playerRB.velocity.y);
                 if(playerRB.velocity.x > 1 || playerRB.velocity.x < -1){
                     anim.SetBool("isWalking", true);
@@ -93,9 +96,9 @@ public class PlayerController : MonoBehaviour
                 if (Input.GetButtonDown("Jump") && jumpCounter < 2)
                 {
                     audioSource.PlayOneShot(jumpSound, 0.35f);
-                    playerRB.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
+                    playerRB.AddForce(new Vector2(playerRB.velocity.x, jumpForce), ForceMode2D.Force);
                     
-                }else if(isGrounded){
+                }else if(isGrounded || isTouchingWall){
                     jumpCounter = 0; 
                 }
                 if(Input.GetButtonUp("Jump")){
