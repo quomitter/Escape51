@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
                     jumpCounter++; 
                 }
 
-                if (Input.GetButton("Fire1") && !isRolling)
+                if (System.Convert.ToBoolean(Input.GetAxis("RightTrigger")) && !isRolling)
                 {
                     anim.SetBool("isShooting", true);
                     if (Time.time > fireRate + lastShot)

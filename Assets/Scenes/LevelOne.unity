@@ -31745,7 +31745,7 @@ MonoBehaviour:
   m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
+  m_SubmitButton: Fire1
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
@@ -31762,7 +31762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 471035231}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1275865906
@@ -74167,12 +74167,36 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.35787502
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.17222223
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.038875006
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.022222223
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -20.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -20.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -385
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1391360084387382737, guid: 9accd34d982491241962c1271110ecb9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -284
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1391360085326313185, guid: 9accd34d982491241962c1271110ecb9, type: 3}
       propertyPath: m_Camera
@@ -75115,6 +75139,10 @@ PrefabInstance:
       propertyPath: jumpSound
       value: 
       objectReference: {fileID: 8300000, guid: a72878390187f1e4d928ba6f5c8bba5f, type: 3}
+    - target: {fileID: 8787691947714559641, guid: b30da05582601d147a28a5b926094389, type: 3}
+      propertyPath: bulletSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8787691947714559641, guid: b30da05582601d147a28a5b926094389, type: 3}
       propertyPath: groundCheck
       value: 
