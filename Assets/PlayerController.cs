@@ -159,6 +159,10 @@ public class PlayerController : MonoBehaviour
 
             }
         }
+        else{
+                playerRB.velocity = new Vector2(0,0); 
+        }
+
 
         if (playerHealthController.currentHealth <= 0)
         {
