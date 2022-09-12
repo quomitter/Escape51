@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     public bool isTouchingWall;
     public float staminaTimer = 1f;
-    public float fillStaminaTimer = 2f;
+    public float fillStaminaTimer = 1f;
     public bool isPaused;
 
     // Start is called before the first frame update
@@ -187,7 +187,7 @@ public class PlayerController : MonoBehaviour
                     if (fillStaminaTimer < 0)
                     {
                         playerHealthController.FillStamina();
-                        fillStaminaTimer = 2f;
+                        fillStaminaTimer = 1f;
                     }
 
                 }
