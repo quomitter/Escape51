@@ -16,9 +16,10 @@ public class PlayerController : MonoBehaviour
     public GameObject laserShot;
     public Transform firePoint;
     public Transform groundCheck;
-    public Transform wallCheck; 
+    public Transform wallCheck;
     public LayerMask whatIsGround;
     public TMP_Text deathText;
+    public Canvas pauseCanvas; 
 
     public Vector2 direction;
 
@@ -50,8 +51,9 @@ public class PlayerController : MonoBehaviour
     public bool hasRescuedBlue;
     public bool isGrounded;
     public bool isTouchingWall;
-    public float staminaTimer = 1f; 
-    public float fillStaminaTimer = 2f; 
+    public float staminaTimer = 1f;
+    public float fillStaminaTimer = 2f;
+    public bool isPaused;
 
     // Start is called before the first frame update
     void Start()
@@ -63,127 +65,151 @@ public class PlayerController : MonoBehaviour
         jumpCounter = 0;
         isDeadCounter = 0;
         canRoll = true;
+        isPaused = false; 
         canRollCoolDown = 0;
         canRollTimer = canRollTimeLeft;
         isDead = false;
         playerHealthController = GameObject.Find("Alien_Green").GetComponent<PlayerHealthController>();
         anim.SetBool("isDead", false);
+        pauseCanvas.gameObject.SetActive(false); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isInUI)
+        if (!isPaused)
         {
-            if (!isDead)
+            if (!isInUI)
             {
-                staminaTimer -= Time.deltaTime; 
-                fillStaminaTimer -= Time.deltaTime; 
-                isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, whatIsGround);
-                isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, 0.1f, whatIsGround);
-                playerRB.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, playerRB.velocity.y);
-                if(playerRB.velocity.x > 1 || playerRB.velocity.x < -1){
-                    anim.SetBool("isWalking", true);
-                }else{
-                    anim.SetBool("isWalking", false);
-                }
-
-                if (playerRB.velocity.x > 0 && m_FacingRight)
+                if (!isDead)
                 {
-                    Flip();
-                }
-                else if (playerRB.velocity.x < 0 && !m_FacingRight)
-                {
-                    Flip();
-                }
-
-                if (Input.GetButtonDown("Jump") && jumpCounter < 2 && playerHealthController.currentStamina > 0)
-                {
-                    audioSource.PlayOneShot(jumpSound, 0.35f);
-                    playerHealthController.ReduceStamina(); 
-                    playerRB.AddForce(new Vector2(playerRB.velocity.x, jumpForce), ForceMode2D.Force);
-                    
-                }else if(isGrounded || isTouchingWall){
-                    jumpCounter = 0; 
-                }
-                if(Input.GetButtonUp("Jump")){
-                    jumpCounter++; 
-                }
-
-                if (System.Convert.ToBoolean(Input.GetAxis("RightTrigger")) && !isRolling)
-                {
-                    anim.SetBool("isShooting", true);
-                    if (Time.time > fireRate + lastShot)
+                    staminaTimer -= Time.deltaTime;
+                    fillStaminaTimer -= Time.deltaTime;
+                    isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, whatIsGround);
+                    isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, 0.1f, whatIsGround);
+                    playerRB.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, playerRB.velocity.y);
+                    if (playerRB.velocity.x > 1 || playerRB.velocity.x < -1)
                     {
-                        audioSource.PlayOneShot(gunSound, 0.35f);
-                        GameObject clone = Instantiate(laserShot, firePoint.position, firePoint.rotation);
-                        Physics2D.IgnoreCollision(clone.GetComponent<Collider2D>(), playerRB.GetComponent<Collider2D>());
-                        Rigidbody2D shot = clone.GetComponent<Rigidbody2D>();
-                        if (!m_FacingRight)
-                            shot.AddForce(transform.right * bulletSpeed, ForceMode2D.Impulse);
-                        else
-                            shot.AddForce(-transform.right * bulletSpeed, ForceMode2D.Impulse);
-                        Destroy(clone.gameObject, 1f);
-                        lastShot = Time.time;
+                        anim.SetBool("isWalking", true);
                     }
-                }
-                else
-                {
-                    anim.SetBool("isShooting", false);
-                }
-
-
-                if (Input.GetButtonUp("Fire2"))
-                {
-                    playerHealthController.ReduceStamina(); 
-                    playerHealthController.ReduceStamina();
-                    playerHealthController.ReduceStamina();
-                    
-                    canRollTimer = canRollTimeLeft;
-                }
-                if (Input.GetButton("Fire2") && canRollTimer > 0 && canRollCoolDown < 0 && playerHealthController.currentStamina > 0)
-                {
-                    canRollTimer -= Time.deltaTime;
-                    anim.SetBool("isRolling", true);
-
-                    isRolling = true;
-                    if (canRollTimer < 0)
+                    else
                     {
-                        canRollCoolDown = 1f;
+                        anim.SetBool("isWalking", false);
+                    }
+
+                    if (playerRB.velocity.x > 0 && m_FacingRight)
+                    {
+                        Flip();
+                    }
+                    else if (playerRB.velocity.x < 0 && !m_FacingRight)
+                    {
+                        Flip();
+                    }
+
+                    if (Input.GetButtonDown("Jump") && jumpCounter < 2 && playerHealthController.currentStamina > 0)
+                    {
+                        audioSource.PlayOneShot(jumpSound, 0.35f);
+                        playerHealthController.ReduceStamina();
+                        playerRB.AddForce(new Vector2(playerRB.velocity.x, jumpForce), ForceMode2D.Force);
+
+                    }
+                    else if (isGrounded || isTouchingWall)
+                    {
+                        jumpCounter = 0;
+                    }
+                    if (Input.GetButtonUp("Jump"))
+                    {
+                        jumpCounter++;
+                    }
+
+                    if (System.Convert.ToBoolean(Input.GetAxis("RightTrigger")) && !isRolling)
+                    {
+                        anim.SetBool("isShooting", true);
+                        if (Time.time > fireRate + lastShot)
+                        {
+                            audioSource.PlayOneShot(gunSound, 0.35f);
+                            GameObject clone = Instantiate(laserShot, firePoint.position, firePoint.rotation);
+                            Physics2D.IgnoreCollision(clone.GetComponent<Collider2D>(), playerRB.GetComponent<Collider2D>());
+                            Rigidbody2D shot = clone.GetComponent<Rigidbody2D>();
+                            if (!m_FacingRight)
+                                shot.AddForce(transform.right * bulletSpeed, ForceMode2D.Impulse);
+                            else
+                                shot.AddForce(-transform.right * bulletSpeed, ForceMode2D.Impulse);
+                            Destroy(clone.gameObject, 1f);
+                            lastShot = Time.time;
+                        }
+                    }
+                    else
+                    {
+                        anim.SetBool("isShooting", false);
+                    }
+
+
+                    if (Input.GetButtonUp("Fire2"))
+                    {
+                        playerHealthController.ReduceStamina();
+                        playerHealthController.ReduceStamina();
+                        playerHealthController.ReduceStamina();
+
                         canRollTimer = canRollTimeLeft;
                     }
+                    if (Input.GetButton("Fire2") && canRollTimer > 0 && canRollCoolDown < 0 && playerHealthController.currentStamina > 0)
+                    {
+                        canRollTimer -= Time.deltaTime;
+                        anim.SetBool("isRolling", true);
+
+                        isRolling = true;
+                        if (canRollTimer < 0)
+                        {
+                            canRollCoolDown = 1f;
+                            canRollTimer = canRollTimeLeft;
+                        }
 
 
-                }
-                else
-                {
-                    canRollCoolDown -= Time.deltaTime;
-                    anim.SetBool("isRolling", false);
-                    isRolling = false;
-                }
-                if (Input.GetButton("Fire3") && playerHealthController.currentStamina > 0)
-                {
-                    if(staminaTimer < 0){
-                    playerHealthController.ReduceStamina();
-                    staminaTimer = 1f; 
                     }
-                    moveSpeed = 16f;
-                }
-                else
-                {
-                    moveSpeed = 8f;
-                }
-                if(fillStaminaTimer < 0 ){
-                    playerHealthController.FillStamina(); 
-                    fillStaminaTimer = 2f; 
-                }
+                    else
+                    {
+                        canRollCoolDown -= Time.deltaTime;
+                        anim.SetBool("isRolling", false);
+                        isRolling = false;
+                    }
+                    if (Input.GetButton("Fire3") && playerHealthController.currentStamina > 0)
+                    {
+                        if (staminaTimer < 0)
+                        {
+                            playerHealthController.ReduceStamina();
+                            staminaTimer = 1f;
+                        }
+                        moveSpeed = 16f;
+                    }
+                    else
+                    {
+                        moveSpeed = 8f;
+                    }
+                    if (fillStaminaTimer < 0)
+                    {
+                        playerHealthController.FillStamina();
+                        fillStaminaTimer = 2f;
+                    }
 
+                }
             }
         }
-        else{
-                playerRB.velocity = new Vector2(0,0); 
+        else
+        {
+            playerRB.velocity = new Vector2(0, 0);
         }
 
+        if(Input.GetButtonDown("Start")){
+            isPaused = !isPaused; 
+        }
+        if(isPaused){
+            Time.timeScale = 0;
+            pauseCanvas.gameObject.SetActive(true);
+        }else{
+            Time.timeScale = 1;
+            pauseCanvas.gameObject.SetActive(false); 
+        }
 
         if (playerHealthController.currentHealth <= 0)
         {
