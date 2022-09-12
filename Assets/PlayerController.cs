@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public Transform wallCheck;
     public LayerMask whatIsGround;
     public TMP_Text deathText;
-    public Canvas pauseCanvas; 
+    public Canvas pauseCanvas;
 
     public Vector2 direction;
 
@@ -65,13 +65,13 @@ public class PlayerController : MonoBehaviour
         jumpCounter = 0;
         isDeadCounter = 0;
         canRoll = true;
-        isPaused = false; 
+        isPaused = false;
         canRollCoolDown = 0;
         canRollTimer = canRollTimeLeft;
         isDead = false;
         playerHealthController = GameObject.Find("Alien_Green").GetComponent<PlayerHealthController>();
         anim.SetBool("isDead", false);
-        pauseCanvas.gameObject.SetActive(false); 
+        pauseCanvas.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -149,8 +149,6 @@ public class PlayerController : MonoBehaviour
                     {
                         playerHealthController.ReduceStamina();
                         playerHealthController.ReduceStamina();
-                        playerHealthController.ReduceStamina();
-
                         canRollTimer = canRollTimeLeft;
                     }
                     if (Input.GetButton("Fire2") && canRollTimer > 0 && canRollCoolDown < 0 && playerHealthController.currentStamina > 0)
@@ -194,21 +192,26 @@ public class PlayerController : MonoBehaviour
 
                 }
             }
+            else
+            {
+                playerRB.velocity = new Vector2(0, 0);
+            }
+        }
+
+
+        if (Input.GetButtonDown("Start"))
+        {
+            isPaused = !isPaused;
+        }
+        if (isPaused)
+        {
+            Time.timeScale = 0;
+            pauseCanvas.gameObject.SetActive(true);
         }
         else
         {
-            playerRB.velocity = new Vector2(0, 0);
-        }
-
-        if(Input.GetButtonDown("Start")){
-            isPaused = !isPaused; 
-        }
-        if(isPaused){
-            Time.timeScale = 0;
-            pauseCanvas.gameObject.SetActive(true);
-        }else{
             Time.timeScale = 1;
-            pauseCanvas.gameObject.SetActive(false); 
+            pauseCanvas.gameObject.SetActive(false);
         }
 
         if (playerHealthController.currentHealth <= 0)
