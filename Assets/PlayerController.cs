@@ -138,15 +138,33 @@ public class PlayerController : MonoBehaviour
                         anim.SetBool("isShooting", true);
                         if (Time.time > fireRate + lastShot)
                         {
-                            audioSource.PlayOneShot(gunSound, 0.35f);
-                            GameObject clone = Instantiate(laserShot, firePoint.position, firePoint.rotation);
-                            Physics2D.IgnoreCollision(clone.GetComponent<Collider2D>(), playerRB.GetComponent<Collider2D>());
-                            Rigidbody2D shot = clone.GetComponent<Rigidbody2D>();
-                            if (!m_FacingRight)
-                                shot.AddForce(transform.right * bulletSpeed, ForceMode2D.Impulse);
-                            else
-                                shot.AddForce(-transform.right * bulletSpeed, ForceMode2D.Impulse);
-                            Destroy(clone.gameObject, 1f);
+
+                            GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject();
+                            if (bullet != null)
+                            {
+                                bullet.transform.position = firePoint.transform.position;
+                                bullet.transform.rotation = firePoint.transform.rotation;
+                                bullet.SetActive(true);
+                                if (!m_FacingRight)
+                                {
+                                    audioSource.PlayOneShot(gunSound, 0.35f);
+                                    bullet.GetComponent<Rigidbody2D>().AddForce(transform.right * bulletSpeed, ForceMode2D.Impulse);
+                                }
+                                else
+                                {
+                                    audioSource.PlayOneShot(gunSound, 0.35f);
+                                    bullet.GetComponent<Rigidbody2D>().AddForce(-transform.right * bulletSpeed, ForceMode2D.Impulse);
+                                }
+                            }
+
+                            // GameObject clone = Instantiate(laserShot, firePoint.position, firePoint.rotation);
+                            // Physics2D.IgnoreCollision(clone.GetComponent<Collider2D>(), playerRB.GetComponent<Collider2D>());
+                            // Rigidbody2D shot = clone.GetComponent<Rigidbody2D>();
+                            // if (!m_FacingRight)
+                            //     shot.AddForce(transform.right * bulletSpeed, ForceMode2D.Impulse);
+                            // else
+                            //     shot.AddForce(-transform.right * bulletSpeed, ForceMode2D.Impulse);
+                            // Destroy(clone.gameObject, 1f);
                             lastShot = Time.time;
                         }
                     }
