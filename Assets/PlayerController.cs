@@ -49,7 +49,9 @@ public class PlayerController : MonoBehaviour
     int activeSceneIndex;
     public bool hasRescuedBlue;
     public bool isGrounded;
-    public bool isTouchingWall;  
+    public bool isTouchingWall;
+    public float staminaTimer = 1f; 
+    public float fillStaminaTimer = 2f; 
 
     // Start is called before the first frame update
     void Start()
@@ -75,6 +77,8 @@ public class PlayerController : MonoBehaviour
         {
             if (!isDead)
             {
+                staminaTimer -= Time.deltaTime; 
+                fillStaminaTimer -= Time.deltaTime; 
                 isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, whatIsGround);
                 isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, 0.1f, whatIsGround);
                 playerRB.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, playerRB.velocity.y);
@@ -93,9 +97,10 @@ public class PlayerController : MonoBehaviour
                     Flip();
                 }
 
-                if (Input.GetButtonDown("Jump") && jumpCounter < 2)
+                if (Input.GetButtonDown("Jump") && jumpCounter < 2 && playerHealthController.currentStamina > 0)
                 {
                     audioSource.PlayOneShot(jumpSound, 0.35f);
+                    playerHealthController.ReduceStamina(); 
                     playerRB.AddForce(new Vector2(playerRB.velocity.x, jumpForce), ForceMode2D.Force);
                     
                 }else if(isGrounded || isTouchingWall){
@@ -130,12 +135,17 @@ public class PlayerController : MonoBehaviour
 
                 if (Input.GetButtonUp("Fire2"))
                 {
+                    playerHealthController.ReduceStamina(); 
+                    playerHealthController.ReduceStamina();
+                    playerHealthController.ReduceStamina();
+                    
                     canRollTimer = canRollTimeLeft;
                 }
-                if (Input.GetButton("Fire2") && canRollTimer > 0 && canRollCoolDown < 0)
+                if (Input.GetButton("Fire2") && canRollTimer > 0 && canRollCoolDown < 0 && playerHealthController.currentStamina > 0)
                 {
                     canRollTimer -= Time.deltaTime;
                     anim.SetBool("isRolling", true);
+
                     isRolling = true;
                     if (canRollTimer < 0)
                     {
@@ -151,13 +161,21 @@ public class PlayerController : MonoBehaviour
                     anim.SetBool("isRolling", false);
                     isRolling = false;
                 }
-                if (Input.GetButton("Fire3"))
+                if (Input.GetButton("Fire3") && playerHealthController.currentStamina > 0)
                 {
+                    if(staminaTimer < 0){
+                    playerHealthController.ReduceStamina();
+                    staminaTimer = 1f; 
+                    }
                     moveSpeed = 16f;
                 }
                 else
                 {
                     moveSpeed = 8f;
+                }
+                if(fillStaminaTimer < 0 ){
+                    playerHealthController.FillStamina(); 
+                    fillStaminaTimer = 2f; 
                 }
 
             }

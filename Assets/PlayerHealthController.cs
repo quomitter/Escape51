@@ -17,12 +17,15 @@ public class PlayerHealthController : MonoBehaviour
 
     public float flashLength;
     private float flashCounter;
+    public int currentStamina;
+    public int maxStamina = 10; 
 
     // Start is called before the first frame update
     void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
         currentHealth = maxHealth;
+        currentStamina = maxStamina; 
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -53,5 +56,14 @@ public class PlayerHealthController : MonoBehaviour
     {
         currentHealth = maxHealth;
 
+    }
+
+    public void FillStamina(){
+        if(currentStamina < 10)
+            currentStamina++; 
+    }
+    public void ReduceStamina(){
+        if(currentStamina > 0)
+            currentStamina -= 1; 
     }
 }
