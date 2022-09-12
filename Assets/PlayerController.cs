@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
     public float staminaTimer = 1f;
     public float fillStaminaTimer = 1f;
     public bool isPaused;
+    public bool isWallSliding;
 
     // Start is called before the first frame update
     void Start()
@@ -108,9 +109,19 @@ public class PlayerController : MonoBehaviour
 
                     if (Input.GetButtonDown("Jump") && jumpCounter < 2 && playerHealthController.currentStamina > 0)
                     {
-                        audioSource.PlayOneShot(jumpSound, 0.35f);
-                        playerHealthController.ReduceStamina();
-                        playerRB.AddForce(new Vector2(playerRB.velocity.x, jumpForce), ForceMode2D.Force);
+                        if (!isWallSliding)
+                        {
+                            audioSource.PlayOneShot(jumpSound, 0.35f);
+                            playerHealthController.ReduceStamina();
+                            playerRB.AddForce(new Vector2(playerRB.velocity.x, jumpForce), ForceMode2D.Force);
+                        }
+                        else
+                        {
+                            audioSource.PlayOneShot(jumpSound, 0.35f);
+                            playerHealthController.ReduceStamina();
+                            playerRB.AddForce(new Vector2(playerRB.velocity.x, jumpForce), ForceMode2D.Force);
+                        }
+
 
                     }
                     else if (isGrounded || isTouchingWall)
@@ -189,13 +200,22 @@ public class PlayerController : MonoBehaviour
                         playerHealthController.FillStamina();
                         fillStaminaTimer = 1f;
                     }
+                    if (isTouchingWall && !isGrounded)
+                    {
+                        isWallSliding = true;
+                    }
+                    else
+                    {
+                        isWallSliding = false;
+                    }
+                    if (isWallSliding)
+                    {
+                        playerRB.velocity = new Vector2(playerRB.velocity.x, Mathf.Clamp(playerRB.velocity.y, 0.3f, float.MaxValue));
+                    }
 
                 }
             }
-            else
-            {
-                playerRB.velocity = new Vector2(0, 0);
-            }
+
         }
 
 

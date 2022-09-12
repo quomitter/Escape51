@@ -3616,9 +3616,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 2dc6a7bdbb4588a42b9eddad7d70e808, type: 2}
-  m_audioClip: {fileID: 8300000, guid: f1f7e18d6f6f9f846bc6cd810e644883, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 06223dc04773c08439c66e0c16c6c51d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.106
+  m_Volume: 0.134
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -53192,7 +53192,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
