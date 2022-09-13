@@ -226,10 +226,10 @@ public class PlayerController : MonoBehaviour
                     {
                         isWallSliding = false;
                     }
-                    if (isWallSliding)
-                    {
-                        playerRB.velocity = new Vector2(playerRB.velocity.x, Mathf.Clamp(playerRB.velocity.y, 0.3f, float.MaxValue));
-                    }
+                    // if (isWallSliding)
+                    // {
+                    //     playerRB.velocity = new Vector2(playerRB.velocity.x, Mathf.Clamp(playerRB.velocity.y, 0.3f, float.MaxValue));
+                    // }
 
                 }
             }
