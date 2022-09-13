@@ -5,7 +5,7 @@ using UnityEngine;
 public class LaserDamage : MonoBehaviour
 {
 
-    float timeAlive = 5f; 
+    float timeAlive = 2f; 
     private PlayerHealthController playerHealthController; 
 
     // Start is called before the first frame update
@@ -21,7 +21,7 @@ public class LaserDamage : MonoBehaviour
         timeAlive -= Time.deltaTime; 
         if(timeAlive < 0){
             gameObject.SetActive(false);
-            timeAlive = 5; 
+            timeAlive = 2; 
         }
     }
 
